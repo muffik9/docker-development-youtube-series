@@ -3,10 +3,11 @@ node('jenkins-slave') {
      stage('test pipeline') {
         sh(script: """
             echo "hello"
+           sudo chmod 666 /var/run/docker.sock
            git clone https://github.com/marcel-dempers/docker-development-youtube-series.git
            cd ./docker-development-youtube-series/golang
            
-           sudo docker build . -t test
+           docker build . -t test
         """)
     }
 }
