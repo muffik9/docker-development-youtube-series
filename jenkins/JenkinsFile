@@ -5,4 +5,4 @@ node('jenkins-slave') {
             docker run --rm alpine /bin/sh -c "echo hello world"
         """)
     }
-
+}
